@@ -42,6 +42,7 @@ past_100_days = data_train.tail(100)
 
 final_df = pd.concat([past_100_days,data_test],ignore_index=True)
 
+final_df = final_df.dropna()
 input_data = scaler.fit_transform(final_df)
 
 x_test = []
